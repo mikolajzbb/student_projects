@@ -5,6 +5,24 @@
 #include "gtest/gtest.h"
 #include <chrono>
 
+void bubbleSort(std::vector<int>& vec) {
+	int n = vec.size();
+	bool swapped;
+
+	for(int i = 0; i < n - 1; i++){
+		swapped = false;
+		for(int j=0; j < n - i - 1; j++){
+			if(vec[j] > vec[j+1]){
+				std::swap(vec[j], vec[j+1]);
+				swapped = true;
+			}
+		}
+		if(!swapped) break;
+	}
+}
+
+
+
 // Funkcja sortująca wektor za pomocą QuickSort
 void quickSort(std::vector<int>& vec) {
     if (vec.size() <= 1) return;
@@ -21,12 +39,17 @@ void quickSort(std::vector<int>& vec) {
     vec.push_back(pivot);
     vec.insert(vec.end(), right.begin(), right.end());
 }
-int sortowanie_babelkowe() {
+TEST(BenchmarkTest, bubbleSort)  {
     std::vector<int> vec1(10000);
     std::srand(std::time(0));
     std::generate(vec1.begin(), vec1.end(), std::rand);
 
     auto start = std::chrono::high_resolution_clock::now();
+    bubbleSort(vec1);
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::cout << "Czas sortowwania babelkowego: " << elapsed_seconds.count() << "s\n";
 }
 
 
@@ -45,7 +68,7 @@ TEST(BenchmarkTest, QuickSortBenchmark) {
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;
 
-    std::cout << "Czas sortowania: " << elapsed_seconds.count() << "s\n";
+    std::cout << "Czas sortowania Quicksort: " << elapsed_seconds.count() << "s\n";
 }
 
 int main(int argc, char **argv) {
