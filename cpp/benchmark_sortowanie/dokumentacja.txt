@@ -1,0 +1,29 @@
+1. Dokumentacja ta dotyczy projektu porównania szybkości sortowania między metodą QuickSort a sortowaniem bąbelkowym. 
+  Kod zawiera pomiar czasu poszczególnych metod z wykorzystaniem funkcji z biblioteki chrono.
+
+2. Struktura:
+a) BubbleSort:
+  - sortuje wektor metodą sortowania bąbelkowego, porównuje sąsiadujące elementy i zamienia je, jeśli są w złej kolejności
+  - zawiera instrukcję przerwania działania, w momencie w którym lista jest już posortowana
+  - parametr vec - referencja do wektora liczb całkowitych do posortowania
+
+b) QuickSort:
+  - sortuje wektor przy użyciu algorytmu QuickSort
+  - algorytm wybiera środkowy element i dzieli pozostałe na grupy: mniejsze i większe od środkowego. Następnie sortuje te grupy
+    rekurencyjnie i łączy wyniki
+  - parametr vec - referencja do wektora liczb całkowitych do posortowania
+
+c) Testy wydajności z GoogleTest - dwa testy porównują wydajność obu algorytmów sortowania na wektorze 10000 losowych liczb 
+    całkowitych
+
+d) W obu przypadkach czas liczony jest z pomocą biblioteki chrono
+
+3. Zawarte biblioteki:
+    - iostream - umożliwia wejście/wyjście na konsolę
+    - vector - zarządzanie wektorami
+    - algorithm - wykorzystywana do generowania losowych liczb
+    - ctime - używana do inicjalizacji generatora liczb losowych
+    - gtest/gtest.h - GoogleTest - framework do testowania jednostkowego
+    - chrono- używana do pomiaru czasu działania funkcji
+
+    
