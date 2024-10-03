@@ -42,7 +42,7 @@ int main(){
 	auto start_switch = chrono::high_resolution_clock::now();
 	for (int i = 0; i < num_tests; ++i) {
 		int x = rand() % 10;
-		switch_case(x)
+		switch_case(x);
 	}
 	auto end_switch = chrono::high_resolution_clock::now();
 	chrono::duration<double> duration_switch = end_switch - start_switch;
@@ -52,7 +52,7 @@ int main(){
 	auto start_if_else = chrono::high_resolution_clock::now();
 	for (int i = 0; i < num_tests; ++i) {
 		int x = rand() % 10;
-		if_else_case(x)
+		if_else_case(x);
 	}
 	auto end_if_else = chrono::high_resolution_clock::now();
 	chrono::duration<double> duration_if_else = end_if_else - start_if_else;
