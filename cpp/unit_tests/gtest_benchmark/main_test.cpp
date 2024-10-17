@@ -1,4 +1,4 @@
-#include "benchmark/benchmark.h"
+ #include "benchmark/benchmark.h"
 
 /////////////////////////////////////////////////////
 // Funkcja dodająca dwie liczby i jej benchmark
