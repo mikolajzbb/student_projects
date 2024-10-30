@@ -1,0 +1,17 @@
+Program będzie przyjmować całkowitą wysokość i długość schodów. Algorytm będzie zwracał łączną iczbę schodów wymaganych. Algorytm wyliczy czy schody spełniają normy i ile ich potrzeba. Program policzy minimalną i maksymalną
+liczbę schodów na podstawie zakresu najpierw długości (minimalna liczba schodków przy maksymalnej długości i maksymalna liczba schodków przy minimalnej długości) a później wysokości (minimalna liczba stopni do osiągnięcia 
+danej wysokości przy maksymalnej wysokości i maksymalna liczba stopni przy minimalnej wysokości stopnia) wymaganych do zbudowania schodów według podanych wymiarów. 
+Następnie wyznaczy wspólny zakres dla liczby stopni i stworzy zmienne min liczba schodów i max liczba schodów.. NastęŘpnie program sprawdzi czy da się zbudować 
+takie schody i jeśli tak to wyświetli minimalną i maksymalną ich liczbę. Jeśli się nie da to poinformuje o tym użytkownika.
+
+Program przyjmie:
+a) całkowitą wysokość schodów
+b) całkowitą długość stopni
+
+Program zwróci:
+a) ilość schodów
+b) wysokość stopnia (między 16 a 19cm)
+c) długość stopnia (między 25 a 32cm)
+
+Zalecenia budowlane co do wysokości i długości stopnia są zgodne z wytycznymi rządowymi: 
+https://budowlaneabc.gov.pl/standardy-projektowania-budynkow-dla-osob-niepelnosprawnych/budynek/komunikacja-pionowa-budynku/schody/stopnie/
