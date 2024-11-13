@@ -16,9 +16,9 @@ int main(){
 
 	int liczba_stopni = std::round(calkowita_wysokosc / ((min_wysokosc + max_wysokosc) / 2.0));
 	double rzeczywista_wysokosc_stopnia = calkowita_wysokosc / liczba_stopni;
-	double rzeczywista_dlugosc_stopnia = calkowita_dlugosc / liczba stopni;
+	double rzeczywista_dlugosc_stopnia = calkowita_dlugosc / liczba_stopni;
 
-	if (rzeczywista_wysokosc_stopnia < min_wysokosc || rzeczywista_wysokosc > max_wysokosc) {
+	if (rzeczywista_wysokosc_stopnia < min_wysokosc || rzeczywista_wysokosc_stopnia > max_wysokosc) {
 		cout<<"Nie można uzyskać optymalnych schodów przy podanych wymiarach. \n";
 		return 1;
 	}
