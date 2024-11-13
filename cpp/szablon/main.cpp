@@ -4,37 +4,28 @@
 using namespace std;
 
 int main(){
-	double wysokosc_calkowita, dlugosc_calkowita;
+	double calkowita_dlugosc, calkowita_wysokosc;
 	cout<<"Podaj wysokość całkowitą schodów (cm): ";
-	cin>>wysokosc_calkowita;
+	cin>>calkowita_wysokosc;
 	cout<<"Podaj długość całkowitą schodów (cm): ";
-	cin??dlugosc_calkowita;
+	cin>>calkowita_dlugosc;
 
-	const double min_wysokosc_stopnia = 16.0;
-	const double max_wysokosc_stopnia = 19.0;
-	const double min_dlugosc_stopnia = 25.0;
-	const double max_dlugosc_stopnia = 32.0;
+	const int min_wysokosc = 16;
+	const int max_wysokosc = 18;
+	const int opt_dlugosc = 29;
 
-	//Obliczamy liczbę stopni na podstawie wysokości
-	int min_stopnie_wysokosc = ceil(wysokosc_calkowita / max_wysokosc_stopnia);
-	int max_stopnie_wysokosc = floor(wysokosc_calkowita / min_wysokosc_stopnia);
+	int liczba_stopni = std::round(calkowita_wysokosc / ((min_wysokosc + max_wysokosc) / 2.0));
+	double rzeczywista_wysokosc_stopnia = calkowita_wysokosc / liczba_stopni;
+	double rzeczywista_dlugosc_stopnia = calkowita_dlugosc / liczba stopni;
 
-	//Obliczamy liczbę stopni na podstawie długości
-	int min_stopnie_dlugosc = ceil(dlugosc_calkowita / max_dlugosc_stopnia);
-	int max_stopnie_dlugosc = floor(dlugosc_calkowita / min_dlugosc_stopnia);
-
-	//Szukamy wspólnego zakresu
-	int min_stopnie = max(min_stopnie_wysokosc, min_stopnie_dlugosc);
-	int max_stopnie = min(max_stopnie_wysokosc, max_stopnie_dlugosc);
-
-	//Sprawdzamy czy możliwa liczba stopni istnieje w dopuszczalnym zakresie
-	if (min_stopnie <= max_stopnie) {
-		cout << "Minimalna liczba stopni: " << min_stopnie << endl;
-		cout << "Maksymalna liczba stopni: " << max_stopnie << endl;
-	} else {
-		cout << "Nie da się zbudować schodów w optymalnym zakresie o zadanych wymiarach." << endl;
+	if (rzeczywista_wysokosc_stopnia < min_wysokosc || rzeczywista_wysokosc > max_wysokosc) {
+		cout<<"Nie można uzyskać optymalnych schodów przy podanych wymiarach. \n";
+		return 1;
 	}
-	
+
+	cout<<"Optymalna liczba stopni: " << liczba_stopni << endl;
+	cout<<"Wysokość każdego stopnia: " << rzeczywista_wysokosc_stopnia << " cm" << endl;
+	cout<<"Długość każdego stopnia: " << rzeczywista_dlugosc_stopnia << " cm" << endl;
 	
 	return 0;
 }
